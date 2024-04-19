@@ -1,0 +1,17 @@
+This application requires pip and venv to be available. If they are not available they can be installed on using the apt package manager with the following commands:
+
+sudo apt-get install python3-pip
+sudo apt install python3-venv
+	In my case the command was sudo apt install python3.8-venv but it may vary for different installation versions.
+sudo apt install mysql-server
+
+Ensure that both pip and venv are available before continuing.
+
+Run the following commands:
+
+sudo mysql
+CREATE USER 'server'@'localhost' IDENTIFIED BY 'server_password';
+GRANT CREATE,ALTER,INSERT,UPDATE,DELETE,SELECT,RELOAD on *.* TO 'server'@'localhost' WITH GRANT OPTION;
+
+After ensuring that both pip and venv are available, run the setup.sh command. This will create a virtual environment for the server to run in and will install flask
+which will run the API.
